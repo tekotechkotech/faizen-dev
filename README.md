@@ -33,6 +33,7 @@ MariaDB
 
 ## Documentation
 
+- `docs/ARCHITECTURE.md` — Application architecture (this repo's locked decision record)
 - `docs/prd/` — Product Requirements (19 files, `10-technical-stack-and-architecture.md` is the stack reference)
 - `docs/task/` — Task list (96+ files, starting with `001-initialize-project-repository.md`)
 
