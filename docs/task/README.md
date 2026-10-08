@@ -1,0 +1,212 @@
+# Faizen Studio — Task Index
+
+Task number is the recommended execution order. Status is tracked only here.
+
+## Status
+
+- `TODO`
+- `IN PROGRESS`
+- `BLOCKED`
+- `DONE`
+
+## Tasks
+
+- [ ] **001 — Initialize project repository structure** — TODO
+  - [Task file](./001-initialize-project-repository.md)
+- [ ] **002 — Document application architecture** — TODO
+  - [Task file](./002-document-architecture-decision.md)
+- [ ] **003 — Define page rendering strategy** — TODO
+  - [Task file](./003-define-rendering-strategy.md)
+- [ ] **004 — Define public and private API boundary** — TODO
+  - [Task file](./004-define-api-boundary.md)
+- [ ] **005 — Define CMS data schema** — TODO
+  - [Task file](./005-define-database-content-schema.md)
+- [ ] **006 — Define statuses and publishing rules** — TODO
+  - [Task file](./006-define-status-enums-and-content-rules.md)
+- [ ] **007 — Define inquiry data contract** — TODO
+  - [Task file](./007-define-inquiry-data-contract.md)
+- [ ] **008 — Define analytics event contract** — TODO
+  - [Task file](./008-define-analytics-event-contract.md)
+- [ ] **009 — Define SEO content contract** — TODO
+  - [Task file](./009-define-seo-content-contract.md)
+- [ ] **010 — Define visual direction** — TODO
+  - [Task file](./010-define-design-direction.md)
+- [ ] **011 — Design global information hierarchy** — TODO
+  - [Task file](./011-design-information-hierarchy.md)
+- [ ] **012 — Create homepage wireframe** — TODO
+  - [Task file](./012-design-home-wireframe.md)
+- [ ] **013 — Design homepage hero** — TODO
+  - [Task file](./013-design-home-hero.md)
+- [ ] **014 — Design What We Build section** — TODO
+  - [Task file](./014-design-home-what-we-build.md)
+- [ ] **015 — Design homepage final CTA and footer** — TODO
+  - [Task file](./015-design-home-final-cta-footer.md)
+- [ ] **016 — Design Build listing and detail pages** — TODO
+  - [Task file](./016-design-build-pages.md)
+- [ ] **017 — Design Solution listing and detail pages** — TODO
+  - [Task file](./017-design-solution-pages.md)
+- [ ] **018 — Design With Us, Services, and inquiry pages** — TODO
+  - [Task file](./018-design-with-us-services-inquiry.md)
+- [ ] **019 — Design Article listing and detail pages** — TODO
+  - [Task file](./019-design-articles.md)
+- [ ] **020 — Design error and empty states** — TODO
+  - [Task file](./020-design-error-empty-states.md)
+- [ ] **021 — Define accessibility interaction states** — TODO
+  - [Task file](./021-design-accessibility-states.md)
+- [ ] **022 — Write homepage content** — TODO
+  - [Task file](./022-write-homepage-content.md)
+- [ ] **023 — Write company and With Us content** — TODO
+  - [Task file](./023-write-company-and-with-us-content.md)
+- [ ] **024 — Define initial content plan** — TODO
+  - [Task file](./024-define-seed-content-plan.md)
+- [ ] **025 — Prepare initial website content** — TODO
+  - [Task file](./025-write-seed-content.md)
+- [ ] **026 — Set up Astro frontend** — TODO
+  - [Task file](./026-setup-astro-frontend.md)
+- [ ] **027 — Set up Svelte Islands** — TODO
+  - [Task file](./027-setup-svelte-islands.md)
+- [ ] **028 — Set up Laravel backend API** — TODO
+  - [Task file](./028-setup-laravel-api.md)
+- [ ] **029 — Set up MariaDB** — TODO
+  - [Task file](./029-setup-mariadb.md)
+- [ ] **030 — Set up Docker Compose development environment** — TODO
+  - [Task file](./030-setup-docker-compose.md)
+- [ ] **031 — Create CMS database migrations** — TODO
+  - [Task file](./031-create-database-migrations.md)
+- [ ] **032 — Create Laravel content models** — TODO
+  - [Task file](./032-create-content-models.md)
+- [ ] **033 — Implement content validation rules** — TODO
+  - [Task file](./033-implement-content-validation-rules.md)
+- [ ] **034 — Implement public Build API** — TODO
+  - [Task file](./034-implement-public-build-api.md)
+- [ ] **035 — Implement public Solution API** — TODO
+  - [Task file](./035-implement-public-solution-api.md)
+- [ ] **036 — Implement public Service API** — TODO
+  - [Task file](./036-implement-public-service-api.md)
+- [ ] **037 — Implement public Article API** — TODO
+  - [Task file](./037-implement-public-article-api.md)
+- [ ] **038 — Implement public Hero API** — TODO
+  - [Task file](./038-implement-public-hero-api.md)
+- [ ] **039 — Implement public media delivery** — TODO
+  - [Task file](./039-implement-public-media-api.md)
+- [ ] **040 — Implement inquiry submission API** — TODO
+  - [Task file](./040-implement-inquiry-api.md)
+- [ ] **041 — Implement Company Settings API** — TODO
+  - [Task file](./041-implement-company-settings-api.md)
+- [ ] **042 — Implement CMS authentication** — TODO
+  - [Task file](./042-implement-cms-authentication.md)
+- [ ] **043 — Implement CMS authorization** — TODO
+  - [Task file](./043-implement-cms-authorization.md)
+- [ ] **044 — Implement CMS security controls** — TODO
+  - [Task file](./044-implement-csrf-and-security-controls.md)
+- [ ] **045 — Implement secure media upload** — TODO
+  - [Task file](./045-implement-secure-media-upload.md)
+- [ ] **046 — Implement CMS Build CRUD** — TODO
+  - [Task file](./046-implement-cms-build-crud.md)
+- [ ] **047 — Implement CMS Solution CRUD** — TODO
+  - [Task file](./047-implement-cms-solution-crud.md)
+- [ ] **048 — Implement CMS Service CRUD** — TODO
+  - [Task file](./048-implement-cms-service-crud.md)
+- [ ] **049 — Implement CMS Article CRUD** — TODO
+  - [Task file](./049-implement-cms-article-crud.md)
+- [ ] **050 — Implement CMS Hero management** — TODO
+  - [Task file](./050-implement-cms-hero-management.md)
+- [ ] **051 — Implement CMS media library** — TODO
+  - [Task file](./051-implement-cms-media-library.md)
+- [ ] **052 — Implement CMS inquiry management** — TODO
+  - [Task file](./052-implement-cms-inquiry-management.md)
+- [ ] **053 — Implement CMS company settings** — TODO
+  - [Task file](./053-implement-cms-company-settings.md)
+- [ ] **054 — Implement CMS dashboard** — TODO
+  - [Task file](./054-implement-cms-dashboard.md)
+- [ ] **055 — Implement public Build pages** — TODO
+  - [Task file](./055-build-public-pages.md)
+- [ ] **056 — Implement public Solution pages** — TODO
+  - [Task file](./056-build-public-solution-pages.md)
+- [ ] **057 — Implement public Service pages** — TODO
+  - [Task file](./057-build-public-service-pages.md)
+- [ ] **058 — Implement public Article pages** — TODO
+  - [Task file](./058-build-public-article-pages.md)
+- [ ] **059 — Implement public With Us page** — TODO
+  - [Task file](./059-build-with-us-page.md)
+- [ ] **060 — Implement Let’s Build Together page** — TODO
+  - [Task file](./060-build-inquiry-page.md)
+- [ ] **061 — Implement homepage** — TODO
+  - [Task file](./061-build-homepage.md)
+- [ ] **062 — Implement global navigation and footer** — TODO
+  - [Task file](./062-implement-global-navigation.md)
+- [ ] **063 — Connect company settings to public UI** — TODO
+  - [Task file](./063-implement-company-settings-rendering.md)
+- [ ] **064 — Implement page SEO metadata** — TODO
+  - [Task file](./064-implement-seo-metadata.md)
+- [ ] **065 — Implement sitemap and robots** — TODO
+  - [Task file](./065-implement-sitemap-and-robots.md)
+- [ ] **066 — Implement responsive image handling** — TODO
+  - [Task file](./066-implement-responsive-image-system.md)
+- [ ] **067 — Implement accessibility baseline** — TODO
+  - [Task file](./067-implement-accessibility-baseline.md)
+- [ ] **068 — Select analytics provider** — TODO
+  - [Task file](./068-implement-analytics-provider-decision.md)
+- [ ] **069 — Implement analytics event tracking** — TODO
+  - [Task file](./069-implement-analytics-events.md)
+- [ ] **070 — Select error tracking approach** — TODO
+  - [Task file](./070-define-error-tracking-provider.md)
+- [ ] **071 — Implement application logging** — TODO
+  - [Task file](./071-implement-application-logging.md)
+- [ ] **072 — Implement selected error tracking** — TODO
+  - [Task file](./072-implement-error-tracking.md)
+- [ ] **073 — Configure production security headers** — TODO
+  - [Task file](./073-implement-security-headers.md)
+- [ ] **074 — Create production Docker configuration** — TODO
+  - [Task file](./074-create-production-docker-configuration.md)
+- [ ] **075 — Configure Cloudflare and HTTPS** — TODO
+  - [Task file](./075-configure-cloudflare-and-https.md)
+- [ ] **076 — Select CI provider** — TODO
+  - [Task file](./076-select-ci-provider.md)
+- [ ] **077 — Implement Git-based deployment** — TODO
+  - [Task file](./077-implement-git-based-deployment.md)
+- [ ] **078 — Implement automated database backup** — TODO
+  - [Task file](./078-implement-automated-database-backup.md)
+- [ ] **079 — Implement media and content backup** — TODO
+  - [Task file](./079-implement-media-content-backup.md)
+- [ ] **080 — Document backup and restore procedure** — TODO
+  - [Task file](./080-document-backup-restore-procedure.md)
+- [ ] **081 — Implement uptime monitoring** — TODO
+  - [Task file](./081-implement-uptime-monitoring.md)
+- [ ] **082 — Define measurable performance targets** — TODO
+  - [Task file](./082-define-performance-targets.md)
+- [ ] **083 — Functional QA: navigation** — TODO
+  - [Task file](./083-functional-test-navigation.md)
+- [ ] **084 — Functional QA: public content pages** — TODO
+  - [Task file](./084-functional-test-content-pages.md)
+- [ ] **085 — Functional QA: CMS** — TODO
+  - [Task file](./085-functional-test-cms.md)
+- [ ] **086 — Functional QA: conversion flow** — TODO
+  - [Task file](./086-functional-test-inquiry-and-cta.md)
+- [ ] **087 — Responsive QA: mobile** — TODO
+  - [Task file](./087-responsive-test-mobile.md)
+- [ ] **088 — Responsive QA: tablet and desktop** — TODO
+  - [Task file](./088-responsive-test-tablet-desktop.md)
+- [ ] **089 — Performance QA: priority pages** — TODO
+  - [Task file](./089-performance-test-priority-pages.md)
+- [ ] **090 — SEO QA** — TODO
+  - [Task file](./090-seo-qa.md)
+- [ ] **091 — Accessibility QA** — TODO
+  - [Task file](./091-accessibility-qa.md)
+- [ ] **092 — Security QA** — TODO
+  - [Task file](./092-security-qa.md)
+- [ ] **093 — Browser compatibility QA** — TODO
+  - [Task file](./093-browser-compatibility-qa.md)
+- [ ] **094 — Regression QA** — TODO
+  - [Task file](./094-regression-qa.md)
+- [ ] **095 — Perform final project Definition of Done audit** — TODO
+  - [Task file](./095-final-definition-of-done-audit.md)
+- [ ] **096 — Document release runbook** — TODO
+  - [Task file](./096-document-release-runbook.md)
+
+## Rules
+
+- Dependencies are defined inside each task.
+- Task files are specifications and remain static; progress status is maintained here.
+- Unspecified requirements are not silently added.
+- Decision tasks are completed before their implementation tasks.
