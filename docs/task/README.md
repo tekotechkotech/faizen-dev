@@ -33,25 +33,25 @@ Task number is the recommended execution order. Status is tracked only here.
   - [Task file](./010-define-design-direction.md)
 - [x] **011 — Design global information hierarchy** — DONE
   - [Task file](./011-design-information-hierarchy.md)
-- [ ] **012 — Create homepage wireframe** — TODO
+- [x] **012 — Create homepage wireframe** — DONE
   - [Task file](./012-design-home-wireframe.md)
-- [ ] **013 — Design homepage hero** — TODO
+- [x] **013 — Design homepage hero** — DONE
   - [Task file](./013-design-home-hero.md)
-- [ ] **014 — Design What We Build section** — TODO
+- [x] **014 — Design What We Build section** — DONE
   - [Task file](./014-design-home-what-we-build.md)
-- [ ] **015 — Design homepage final CTA and footer** — TODO
+- [x] **015 — Design homepage final CTA and footer** — DONE
   - [Task file](./015-design-home-final-cta-footer.md)
-- [ ] **016 — Design Build listing and detail pages** — TODO
+- [x] **016 — Design Build listing and detail pages** — DONE
   - [Task file](./016-design-build-pages.md)
-- [ ] **017 — Design Solution listing and detail pages** — TODO
+- [x] **017 — Design Solution listing and detail pages** — DONE
   - [Task file](./017-design-solution-pages.md)
-- [ ] **018 — Design With Us, Services, and inquiry pages** — TODO
+- [x] **018 — Design With Us, Services, and inquiry pages** — DONE
   - [Task file](./018-design-with-us-services-inquiry.md)
-- [ ] **019 — Design Article listing and detail pages** — TODO
+- [x] **019 — Design Article listing and detail pages** — DONE
   - [Task file](./019-design-articles.md)
-- [ ] **020 — Design error and empty states** — TODO
+- [x] **020 — Design error and empty states** — DONE
   - [Task file](./020-design-error-empty-states.md)
-- [ ] **021 — Define accessibility interaction states** — TODO
+- [x] **021 — Define accessibility interaction states** — DONE
   - [Task file](./021-design-accessibility-states.md)
 - [ ] **022 — Write homepage content** — TODO
   - [Task file](./022-write-homepage-content.md)
