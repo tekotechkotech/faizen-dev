@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import Counter from '../components/Counter.svelte';
+---
+<Base title="Faizen Studio — Digital Solutions">
+  <main>
+    <p class="kicker">BUILD · SOLUTIONS · WITH US</p>
+    <h1>Kami membangun solusi digital yang bisa langsung dipakai.</h1>
+    <p>Jelajahi produk Faizen atau bangun solusi baru bersama kami.</p>
+    <p><a class="cta" href="/lets-build-together">Let’s build together →</a></p>
+    <Counter client:load />
+  </main>
+</Base>

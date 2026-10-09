@@ -1,0 +1,17 @@
+---
+const { title = 'Faizen Studio — Digital Solutions' } = Astro.props;
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="Faizen Studio — Digital Solutions. Temukan solusi yang sudah ada, atau bangun solusi baru bersama kami." />
+  </head>
+  <body>
+    <header><nav aria-label="Utama"><span>BUILD · SOLUTIONS · WITH US</span></nav></header>
+    <slot />
+    <footer><p>Faizen Studio — Let’s build together.</p></footer>
+  </body>
+</html>

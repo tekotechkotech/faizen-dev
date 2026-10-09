@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.astro/
+
+# Backend
+backend/vendor/
+backend/.env
+backend/storage/*.key
+backend/storage/logs/*.log
+!backend/storage/logs/.gitignore
+
+# Env & secrets
+.env
+*.key
+*.pem
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Docker volumes
+db/data/
+
+# Build artifacts
+dist/

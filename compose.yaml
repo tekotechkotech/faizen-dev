@@ -1,0 +1,59 @@
+services:
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD:-secret}
+      MARIADB_DATABASE: ${DB_DATABASE:-faizen}
+      MARIADB_USER: ${DB_USERNAME:-faizen}
+      MARIADB_PASSWORD: ${DB_PASSWORD:-secret}
+    ports:
+      - "3310:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APP_NAME: FaizenStudio
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: http://localhost:8010
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_DATABASE: ${DB_DATABASE:-faizen}
+      DB_USERNAME: ${DB_USERNAME:-faizen}
+      DB_PASSWORD: ${DB_PASSWORD:-secret}
+      SESSION_DRIVER: database
+      CACHE_STORE: database
+      QUEUE_CONNECTION: database
+    ports:
+      - "8010:8010"
+    volumes:
+      - ./backend:/var/www
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      PUBLIC_API_URL: http://localhost:8010/api
+    ports:
+      - "3010:3010"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  db-data:
