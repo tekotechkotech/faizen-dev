@@ -13,8 +13,8 @@ bun.lock
 # Distribution / Build outputs
 dist/
 **/dist/
-build/
-**/build/
+frontend/.astro/
+# NOTE: do not ignore **/build/ — it collides with content type Build pages (frontend/src/pages/build/)
 
 # Runtime/storage
 /storage/

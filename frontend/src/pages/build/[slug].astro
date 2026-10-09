@@ -1,0 +1,10 @@
+---
+export const prerender = false;
+import Base from '../../layouts/Base.astro';
+const { slug } = Astro.params;
+const api = import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8000/api';
+let b = null;
+try { const r = await fetch(`${api}/builds/${slug}`); if (r.ok) b = await r.json(); } catch {}
+if (!b) return Astro.redirect('/404');
+---
+<Base title={`${b.title} — Build`}><h1>{b.title}</h1><p>{b.summary}</p><a href="/lets-build-together">Let’s build together →</a></Base>
