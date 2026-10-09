@@ -61,37 +61,37 @@ Task number is the recommended execution order. Status is tracked only here.
   - [Task file](./024-define-seed-content-plan.md)
 - [x] **025 — Prepare initial website content** — DONE
   - [Task file](./025-write-seed-content.md)
-- [ ] **026 — Set up Astro frontend** — TODO
+- [x] **026 — Set up Astro frontend** — DONE
   - [Task file](./026-setup-astro-frontend.md)
-- [ ] **027 — Set up Svelte Islands** — TODO
+- [x] **027 — Set up Svelte Islands** — DONE
   - [Task file](./027-setup-svelte-islands.md)
-- [ ] **028 — Set up Laravel backend API** — TODO
+- [x] **028 — Set up Laravel backend API** — DONE
   - [Task file](./028-setup-laravel-api.md)
-- [ ] **029 — Set up MariaDB** — TODO
+- [x] **029 — Set up MariaDB** — DONE
   - [Task file](./029-setup-mariadb.md)
-- [ ] **030 — Set up Docker Compose development environment** — TODO
+- [x] **030 — Set up Docker Compose development environment** — DONE
   - [Task file](./030-setup-docker-compose.md)
-- [ ] **031 — Create CMS database migrations** — TODO
+- [x] **031 — Create CMS database migrations** — DONE
   - [Task file](./031-create-database-migrations.md)
-- [ ] **032 — Create Laravel content models** — TODO
+- [x] **032 — Create Laravel content models** — DONE
   - [Task file](./032-create-content-models.md)
-- [ ] **033 — Implement content validation rules** — TODO
+- [x] **033 — Implement content validation rules** — DONE
   - [Task file](./033-implement-content-validation-rules.md)
-- [ ] **034 — Implement public Build API** — TODO
+- [x] **034 — Implement public Build API** — DONE
   - [Task file](./034-implement-public-build-api.md)
-- [ ] **035 — Implement public Solution API** — TODO
+- [x] **035 — Implement public Solution API** — DONE
   - [Task file](./035-implement-public-solution-api.md)
-- [ ] **036 — Implement public Service API** — TODO
+- [x] **036 — Implement public Service API** — DONE
   - [Task file](./036-implement-public-service-api.md)
-- [ ] **037 — Implement public Article API** — TODO
+- [x] **037 — Implement public Article API** — DONE
   - [Task file](./037-implement-public-article-api.md)
-- [ ] **038 — Implement public Hero API** — TODO
+- [x] **038 — Implement public Hero API** — DONE
   - [Task file](./038-implement-public-hero-api.md)
-- [ ] **039 — Implement public media delivery** — TODO
+- [x] **039 — Implement public media delivery** — DONE
   - [Task file](./039-implement-public-media-api.md)
-- [ ] **040 — Implement inquiry submission API** — TODO
+- [x] **040 — Implement inquiry submission API** — DONE
   - [Task file](./040-implement-inquiry-api.md)
-- [ ] **041 — Implement Company Settings API** — TODO
+- [x] **041 — Implement Company Settings API** — DONE
   - [Task file](./041-implement-company-settings-api.md)
 - [ ] **042 — Implement CMS authentication** — TODO
   - [Task file](./042-implement-cms-authentication.md)
