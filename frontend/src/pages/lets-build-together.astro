@@ -1,0 +1,14 @@
+---
+export const prerender = false;
+import Base from '../layouts/Base.astro';
+---
+<Base title="Let’s Build Together — Faizen Studio">
+<h1>Let’s build together</h1>
+<form method="post" action="/api/inquiry">
+<label>Intent <select name="intent" required><option value="existing">Existing solution</option><option value="custom">Custom solution</option><option value="partnership">Partnership</option><option value="other">Other</option></select></label>
+<label>Name <input name="name" required minlength="2" maxlength="100" /></label>
+<label>Contact <input name="contact_value" required /></label>
+<label>Brief <textarea name="brief_description" required minlength="10"></textarea></label>
+<button>Get started</button>
+</form>
+</Base>
