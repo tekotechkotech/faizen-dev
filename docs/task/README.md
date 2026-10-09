@@ -11,23 +11,23 @@ Task number is the recommended execution order. Status is tracked only here.
 
 ## Tasks
 
-- [ ] **001 — Initialize project repository structure** — TODO
+- [x] **001 — Initialize project repository structure** — DONE
   - [Task file](./001-initialize-project-repository.md)
-- [ ] **002 — Document application architecture** — TODO
+- [x] **002 — Document application architecture** — DONE
   - [Task file](./002-document-architecture-decision.md)
-- [ ] **003 — Define page rendering strategy** — TODO
+- [x] **003 — Define page rendering strategy** — DONE
   - [Task file](./003-define-rendering-strategy.md)
-- [ ] **004 — Define public and private API boundary** — TODO
+- [x] **004 — Define public and private API boundary** — DONE
   - [Task file](./004-define-api-boundary.md)
-- [ ] **005 — Define CMS data schema** — TODO
+- [x] **005 — Define CMS data schema** — DONE
   - [Task file](./005-define-database-content-schema.md)
-- [ ] **006 — Define statuses and publishing rules** — TODO
+- [ ] **006 — Define statuses and publishing rules** — IN PROGRESS
   - [Task file](./006-define-status-enums-and-content-rules.md)
-- [ ] **007 — Define inquiry data contract** — TODO
+- [ ] **007 — Define inquiry data contract** — IN PROGRESS
   - [Task file](./007-define-inquiry-data-contract.md)
-- [ ] **008 — Define analytics event contract** — TODO
+- [ ] **008 — Define analytics event contract** — IN PROGRESS
   - [Task file](./008-define-analytics-event-contract.md)
-- [ ] **009 — Define SEO content contract** — TODO
+- [x] **009 — Define SEO content contract** — DONE
   - [Task file](./009-define-seo-content-contract.md)
 - [ ] **010 — Define visual direction** — TODO
   - [Task file](./010-define-design-direction.md)
