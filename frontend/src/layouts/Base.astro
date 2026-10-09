@@ -1,4 +1,6 @@
 ---
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
+/* Hallmark · macrostructure: Marquee Hero · nav: N1b canonical · footer: Ft5 Statement · theme: locked-system (docs/DESIGN-DIRECTION.md: zinc paper · emerald accent · Cabinet Grotesk + Plus Jakarta Sans) · genre: editorial */
 interface Props {
   title: string;
   description?: string;
@@ -12,26 +14,115 @@ const { title, description = 'Faizen Studio — Use what exists, build what’s 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <nav aria-label="Primary">
-        <a href="/">Faizen Studio</a>
-        <a href="/build">Build</a>
-        <a href="/solutions">Solutions</a>
-        <a href="/with-us">With Us</a>
-        <a href="/lets-build-together">Let’s build together →</a>
-      </nav>
+    <div class="topline" aria-hidden="true"></div>
+    <header class="site-head">
+      <div class="wrap head-in">
+        <a class="wordmark" href="/">Faizen<span aria-hidden="true">·</span>Studio</a>
+        <nav class="prime" aria-label="Primary">
+          <a href="/build">Build</a>
+          <a href="/solutions">Solutions</a>
+          <a href="/with-us">With Us</a>
+          <a href="/articles">Articles</a>
+        </nav>
+        <a class="cta" href="/lets-build-together">Let’s build together <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="kicker wrap">BUILD · SOLUTIONS · WITH US</p>
     </header>
     <main>
       <slot />
     </main>
-    <footer>
-      <p>Faizen Studio — Product first, company second.</p>
+    <footer class="site-foot">
+      <div class="wrap">
+        <p class="statement">Product first, company second. Use what exists, build what’s next.</p>
+        <div class="foot-grid">
+          <div>
+            <h2>Explore</h2>
+            <ul>
+              <li><a href="/build">Build</a></li>
+              <li><a href="/solutions">Solutions</a></li>
+              <li><a href="/articles">Articles</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Build with us</h2>
+            <ul>
+              <li><a href="/with-us">With Us</a></li>
+              <li><a href="/lets-build-together">Let’s build together</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Studio</h2>
+            <ul>
+              <li><a href="/with-us">Who we are</a></li>
+              <li><a href="/with-us">How we work</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="fine">© Faizen Studio · Do more, less explain.</p>
+      </div>
     </footer>
   </body>
 </html>
-<style>
-  body { font-family: system-ui, sans-serif; max-width: 72ch; margin: 0 auto; padding: 1rem; }
-  nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+<style is:global>
+  :root {
+    --color-paper: #fafaf9;
+    --color-paper-2: #f4f4f5;
+    --color-ink: #18181b;
+    --color-ink-2: #3f3f46;
+    --color-mute: #71717a;
+    --color-line: #e4e4e7;
+    --color-accent: #059669;
+    --color-accent-ink: #065f46;
+    --color-accent-wash: #ecfdf5;
+    --font-display: "Cabinet Grotesk", "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, monospace;
+  }
+  html, body { overflow-x: clip; }
+  html { background: var(--color-paper); }
+  body {
+    margin: 0; color: var(--color-ink); background: var(--color-paper);
+    font-family: var(--font-body); font-size: 1rem; line-height: 1.6;
+  }
+  h1, h2, h3 { font-family: var(--font-display); font-style: normal; font-weight: 700; line-height: 1.08; overflow-wrap: anywhere; min-width: 0; margin: 0 0 0.6rem; }
+  p { margin: 0 0 0.9rem; }
+  a { color: var(--color-accent-ink); }
+  a:hover { color: var(--color-accent); }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
+  .topline { height: 4px; background: var(--color-accent); }
+  .site-head { border-bottom: 1px solid var(--color-line); background: var(--color-paper); }
+  .head-in { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.25rem 0.4rem; flex-wrap: wrap; }
+  .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--color-ink); text-decoration: none; margin-right: auto; white-space: nowrap; }
+  .prime { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+  .prime a { color: var(--color-ink-2); text-decoration: none; font-weight: 600; font-size: 0.95rem; white-space: nowrap; }
+  .prime a:hover { color: var(--color-accent-ink); text-decoration: underline; text-underline-offset: 4px; }
+  .cta { display: inline-block; background: var(--color-accent); color: #fff; font-weight: 700; text-decoration: none; padding: 0.55rem 1rem; border-radius: 999px; white-space: nowrap; border: 1px solid var(--color-accent); }
+  .cta:hover { background: var(--color-accent-ink); color: #fff; }
+  .cta:active { transform: translateY(1px); }
+  .kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--color-mute); padding: 0 1.25rem 0.8rem; margin: 0 auto; }
+  main { display: block; }
+  .site-foot { border-top: 1px solid var(--color-line); background: var(--color-paper-2); margin-top: 3rem; }
+  .site-foot .wrap { padding-top: 2rem; padding-bottom: 2rem; }
+  .statement { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; max-width: 32ch; }
+  .foot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+  .foot-grid h2 { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-mute); }
+  .foot-grid ul { list-style: none; margin: 0; padding: 0; }
+  .foot-grid li { margin: 0.3rem 0; }
+  .foot-grid a { color: var(--color-ink-2); text-decoration: none; }
+  .foot-grid a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .fine { color: var(--color-mute); font-size: 0.85rem; border-top: 1px solid var(--color-line); padding-top: 1rem; }
+  @media (max-width: 768px) {
+    .head-in { gap: 0.7rem; }
+    .foot-grid { grid-template-columns: minmax(0, 1fr); }
+    .statement { font-size: 1.15rem; }
+  }
 </style>
