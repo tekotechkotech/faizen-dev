@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'Faizen Studio — Use what exists, build what’s next.' } = Astro.props;
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Primary">
+        <a href="/">Faizen Studio</a>
+        <a href="/build">Build</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/with-us">With Us</a>
+        <a href="/lets-build-together">Let’s build together →</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>Faizen Studio — Product first, company second.</p>
+    </footer>
+  </body>
+</html>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 72ch; margin: 0 auto; padding: 1rem; }
+  nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+</style>

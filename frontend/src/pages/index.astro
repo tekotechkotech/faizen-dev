@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroCarousel from '../components/HeroCarousel.svelte';
+---
+<Base title="Faizen Studio — Use what exists, build what’s next.">
+  <h1>Build with Faizen — Use what exists, build what’s next.</h1>
+  <p>Discover existing solutions and build new ones together.</p>
+  <p><a href="/lets-build-together">Let’s build together →</a> <a href="/build">Explore Builds</a></p>
+  <!-- Svelte Island only for carousel interactivity, HTML-first content above needs no JS -->
+  <HeroCarousel client:load />
+  <section>
+    <h2>What we build</h2>
+    <ul>
+      <li>Builds — proof</li>
+      <li>Solutions — usable products</li>
+      <li>Services — what we can build together</li>
+    </ul>
+  </section>
+</Base>
