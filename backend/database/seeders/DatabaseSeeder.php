@@ -3,21 +3,38 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Build;
+use App\Models\CompanySetting;
+use App\Models\Hero;
+use App\Models\Inquiry;
+use App\Models\Media;
+use App\Models\Article;
+use App\Models\Service;
+use App\Models\Solution;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $this->call([
+            BuildSeeder::class,
+            SolutionSeeder::class,
+            ServiceSeeder::class,
+            ArticleSeeder::class,
+            HeroSeeder::class,
+            MediaSeeder::class,
+            CompanySettingSeeder::class,
+        ]);
 
+        $adminPassword = env("ADMIN_PASSWORD", "admin123");
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            "name" => "Admin",
+            "email" => "admin@faizenstudio.com",
+            "role" => "ADMIN",
+            "password" => bcrypt($adminPassword),
         ]);
     }
 }
