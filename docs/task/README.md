@@ -31,7 +31,7 @@ Task number is the recommended execution order. Status is tracked only here.
   - [Task file](./009-define-seo-content-contract.md)
 - [x] **010 — Define visual direction** — DONE
   - [Task file](./010-define-design-direction.md)
-- [ ] **011 — Design global information hierarchy** — IN PROGRESS
+- [x] **011 — Design global information hierarchy** — DONE
   - [Task file](./011-design-information-hierarchy.md)
 - [ ] **012 — Create homepage wireframe** — TODO
   - [Task file](./012-design-home-wireframe.md)
