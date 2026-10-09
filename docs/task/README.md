@@ -21,15 +21,15 @@ Task number is the recommended execution order. Status is tracked only here.
   - [Task file](./004-define-api-boundary.md)
 - [x] **005 — Define CMS data schema** — DONE
   - [Task file](./005-define-database-content-schema.md)
-- [ ] **006 — Define statuses and publishing rules** — IN PROGRESS
+- [x] **006 — Define statuses and publishing rules** — DONE
   - [Task file](./006-define-status-enums-and-content-rules.md)
-- [ ] **007 — Define inquiry data contract** — IN PROGRESS
+- [x] **007 — Define inquiry data contract** — DONE
   - [Task file](./007-define-inquiry-data-contract.md)
-- [ ] **008 — Define analytics event contract** — IN PROGRESS
+- [x] **008 — Define analytics event contract** — DONE
   - [Task file](./008-define-analytics-event-contract.md)
 - [x] **009 — Define SEO content contract** — DONE
   - [Task file](./009-define-seo-content-contract.md)
-- [ ] **010 — Define visual direction** — TODO
+- [ ] **010 — Define visual direction** — IN PROGRESS
   - [Task file](./010-define-design-direction.md)
 - [ ] **011 — Design global information hierarchy** — TODO
   - [Task file](./011-design-information-hierarchy.md)
