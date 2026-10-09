@@ -1,0 +1,5 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  frontend: {runs-on: ubuntu-latest, steps: [{uses: actions/checkout@v4}, {uses: oven-sh/setup-bun@v2}, {run: bun install --cwd frontend}, {run: bun run build --cwd frontend}]}
+  backend: {runs-on: ubuntu-latest, steps: [{uses: actions/checkout@v4}, {run: docker compose config}]}

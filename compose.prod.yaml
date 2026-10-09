@@ -1,0 +1,12 @@
+services:
+  frontend:
+    build: ./frontend
+    environment: [PUBLIC_API_URL=https://api.faizen.example/api]
+  backend:
+    build: ./backend
+    environment: [APP_ENV=production]
+  db:
+    image: mariadb:11
+    environment: {MARIADB_DATABASE: faizen, MARIADB_USER: faizen, MARIADB_PASSWORD: ${DB_PASSWORD}, MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}}
+    volumes: [dbdata:/var/lib/mysql]
+volumes: {dbdata: {}}
