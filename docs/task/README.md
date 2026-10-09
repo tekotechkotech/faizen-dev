@@ -53,13 +53,13 @@ Task number is the recommended execution order. Status is tracked only here.
   - [Task file](./020-design-error-empty-states.md)
 - [x] **021 — Define accessibility interaction states** — DONE
   - [Task file](./021-design-accessibility-states.md)
-- [ ] **022 — Write homepage content** — TODO
+- [x] **022 — Write homepage content** — DONE
   - [Task file](./022-write-homepage-content.md)
-- [ ] **023 — Write company and With Us content** — TODO
+- [x] **023 — Write company and With Us content** — DONE
   - [Task file](./023-write-company-and-with-us-content.md)
-- [ ] **024 — Define initial content plan** — TODO
+- [x] **024 — Define initial content plan** — DONE
   - [Task file](./024-define-seed-content-plan.md)
-- [ ] **025 — Prepare initial website content** — TODO
+- [x] **025 — Prepare initial website content** — DONE
   - [Task file](./025-write-seed-content.md)
 - [ ] **026 — Set up Astro frontend** — TODO
   - [Task file](./026-setup-astro-frontend.md)
