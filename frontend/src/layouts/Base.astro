@@ -49,6 +49,8 @@ const wa = company?.phone_whatsapp ?? '';
         --font-display: 'Space Grotesk', system-ui, sans-serif;
         --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
         --font-mono: ui-monospace, 'Roboto Mono', monospace;
+        --radius-btn: 8px;
+        --radius-card: 12px;
       }
       [data-theme="dark"] {
         --color-paper: #09090b;
@@ -80,7 +82,7 @@ const wa = company?.phone_whatsapp ?? '';
       /* Marquee hero */
       .marquee { border-bottom: 1px solid var(--color-ink); padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 3.5rem); }
       .hero-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
-      .slidecard { border: 1px solid var(--color-ink); border-radius: 2px; background: var(--color-paper-2); overflow: hidden; }
+      .slidecard { border: 1px solid var(--color-ink); border-radius: var(--radius-card); background: var(--color-paper-2); overflow: hidden; }
       .slidecard img { width: 100%; display: block; border-bottom: 1px solid var(--color-line); }
       .slidebody { padding: 1.25rem; }
       .slidetitle { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.8rem); margin: .3rem 0 .5rem; }
@@ -102,11 +104,11 @@ const wa = company?.phone_whatsapp ?? '';
       /* Swipe carousel (semua viewport): snap native + tombol + keyboard */
       .carhead { display: flex; align-items: center; gap: 1rem; }
       .carhead .carbtns { margin-left: auto; display: flex; gap: .5rem; }
-      .carbtn { font-family: var(--font-display); background: none; border: 1px solid var(--color-ink); border-radius: 2px; padding: .35rem .8rem; cursor: pointer; color: var(--color-ink); }
+      .carbtn { font-family: var(--font-display); background: none; border: 1px solid var(--color-ink); border-radius: var(--radius-btn); padding: .35rem .8rem; cursor: pointer; color: var(--color-ink); }
       .carbtn:hover { background: var(--color-ink); color: var(--color-paper); }
       .rows.swipe, .cards.swipe { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: .5rem; }
       .rows.swipe::-webkit-scrollbar, .cards.swipe::-webkit-scrollbar { display: none; }
-      .rows.swipe .row, .cards.swipe .card { flex: 0 0 auto; width: min(22rem, 82%); scroll-snap-align: start; border: 1px solid var(--color-line); border-radius: 2px; padding: 1rem; background: var(--color-paper); }
+      .rows.swipe .row, .cards.swipe .card { flex: 0 0 auto; width: min(22rem, 82%); scroll-snap-align: start; border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 1rem; background: var(--color-paper); }
       .rows.swipe .row { display: block; }
       .rows.swipe .row .idx { display: block; margin-bottom: .5rem; }
       .cards.swipe { border-top: 0; }
@@ -125,7 +127,7 @@ const wa = company?.phone_whatsapp ?? '';
       .card h3 a { color: var(--color-ink); text-decoration: none; }
       .card h3 a:hover { color: var(--color-accent); }
       .card p { margin: 0; color: var(--color-muted); }
-      .cta { display: inline-block; background: var(--color-ink); color: var(--color-paper); padding: .7rem 1.4rem; text-decoration: none; font-weight: 600; border-radius: 2px; }
+      .cta { display: inline-block; background: var(--color-ink); color: var(--color-paper); padding: .7rem 1.4rem; text-decoration: none; font-weight: 600; border-radius: var(--radius-btn); }
       .cta:hover { background: var(--color-accent); color: var(--color-accent-contrast); }
       .cta-band { background: var(--color-ink); color: var(--color-paper); }
       .cta-band h2 { font-size: clamp(2rem, 4vw + 1rem, 3rem); margin: 0 0 1rem; }
@@ -134,7 +136,7 @@ const wa = company?.phone_whatsapp ?? '';
       /* Carousel / spotlight */
       .spot { background: var(--color-paper-2); border-top: 1px solid var(--color-ink); border-bottom: 1px solid var(--color-ink); }
       .spot-title { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 3rem); margin: 0 0 .5rem; }
-      .spot-nav button { font-family: var(--font-display); background: none; border: 1px solid var(--color-ink); border-radius: 2px; padding: .35rem .8rem; cursor: pointer; color: var(--color-ink); }
+      .spot-nav button { font-family: var(--font-display); background: none; border: 1px solid var(--color-ink); border-radius: var(--radius-btn); padding: .35rem .8rem; cursor: pointer; color: var(--color-ink); }
       .spot-nav button:hover { background: var(--color-ink); color: var(--color-paper); }
       /* Footer index */
       footer { border-top: 1px solid var(--color-ink); margin-top: 0; background: var(--color-paper); }
@@ -145,10 +147,10 @@ const wa = company?.phone_whatsapp ?? '';
       footer a:hover { color: var(--color-accent); }
       footer .fine { border-top: 1px solid var(--color-line); padding: 1rem 0 2rem; color: var(--color-muted); font-size: .85rem; display: flex; gap: 1rem; flex-wrap: wrap; }
       form label { display: block; margin: .9rem 0 .3rem; font-weight: 600; }
-      form input, form select, form textarea { width: 100%; max-width: 30rem; padding: .6rem; border: 1px solid var(--color-ink); border-radius: 2px; background: var(--color-paper); color: var(--color-ink); font: inherit; }
+      form input, form select, form textarea { width: 100%; max-width: 30rem; padding: .6rem; border: 1px solid var(--color-ink); border-radius: var(--radius-btn); background: var(--color-paper); color: var(--color-ink); font: inherit; }
       img { max-width: 100%; height: auto; }
-      .rowthumb, .cardthumb, .prooffig img { border: 1px solid var(--color-line); border-radius: 2px; display: block; }
-      .themebtn { font: inherit; background: none; border: 1px solid var(--color-ink); border-radius: 2px; padding: .35rem .7rem; cursor: pointer; color: var(--color-ink); }
+      .rowthumb, .cardthumb, .prooffig img { border: 1px solid var(--color-line); border-radius: var(--radius-btn); display: block; }
+      .themebtn { font: inherit; background: none; border: 1px solid var(--color-ink); border-radius: var(--radius-btn); padding: .35rem .7rem; cursor: pointer; color: var(--color-ink); }
       .error { color: var(--color-danger); }
       .empty { border: 1px dashed var(--color-muted); padding: 1.5rem; color: var(--color-muted); }
       .kicker { font-family: var(--font-mono); letter-spacing: .12em; font-size: .75rem; color: var(--color-muted); text-transform: uppercase; }
