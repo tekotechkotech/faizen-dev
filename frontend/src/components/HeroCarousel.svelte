@@ -1,4 +1,5 @@
 <script>
+  import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-svelte';
   let { slides = [] } = $props();
   let i = $state(0);
   const n = () => Math.max(slides.length, 1);
@@ -15,10 +16,10 @@
       <p class="slidetitle">{s.title}</p>
       {#if s.desc}<p class="slidedesc">{s.desc}</p>{/if}
       <p class="spot-nav">
-        <button onclick={prev} aria-label="Sorotan sebelumnya">←</button>
+        <button onclick={prev} aria-label="Sorotan sebelumnya"><ArrowLeft size={18} /></button>
         <span style="font-family:var(--font-mono);font-size:.8rem;margin:0 .75rem">{i + 1} / {slides.length}</span>
-        <button onclick={next} aria-label="Sorotan berikutnya">→</button>
-        {#if s.href}<a href={s.href} style="margin-left:auto;font-size:.9rem;color:var(--color-accent);font-weight:600">Lihat →</a>{/if}
+        <button onclick={next} aria-label="Sorotan berikutnya"><ArrowRight size={18} /></button>
+        {#if s.href}<a href={s.href} style="margin-left:auto;font-size:.9rem;color:var(--color-accent);font-weight:600;display:inline-flex;align-items:center;gap:.25rem">Lihat <ArrowUpRight size={16} /></a>{/if}
       </p>
     </div>
   </div>

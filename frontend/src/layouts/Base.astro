@@ -175,7 +175,7 @@ const wa = company?.phone_whatsapp ?? '';
           <a href="/build">BUILD</a><span class="dot" aria-hidden="true">·</span><a href="/solutions">SOLUTIONS</a><span class="dot" aria-hidden="true">·</span><a href="/with-us">WITH US</a>
         </nav>
         <div class="navright">
-          <button class="themebtn" id="themebtn" type="button" aria-label="Ganti mode gelap terang">🌙</button>
+          <button class="themebtn" id="themebtn" type="button" aria-label="Ganti mode gelap terang"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
         </div>
       </div>
     </header>
@@ -188,8 +188,11 @@ const wa = company?.phone_whatsapp ?? '';
         const t = (e.target as HTMLElement).closest('[data-track]') as HTMLElement | null;
         if (t && t.dataset.track) track(t.dataset.track as any, { path: location.pathname });
       });
-      const btn = document.getElementById('themebtn');
-      const paint = () => { if (btn) btn.textContent = document.documentElement.dataset.theme === 'dark' ? '🌞' : '🌙'; };
+      const btn = document.getElementById('themebtn') as HTMLElement | null;
+      const svgOpen = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+      const moon = svgOpen + '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+      const sun = svgOpen + '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+      const paint = () => { if (btn) btn.innerHTML = document.documentElement.dataset.theme === 'dark' ? sun : moon; };
       paint();
       btn?.addEventListener('click', () => {
         const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
