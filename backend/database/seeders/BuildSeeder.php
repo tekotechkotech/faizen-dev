@@ -22,7 +22,7 @@ class BuildSeeder extends Seeder
                 'title' => 'Aplikasi Operasional NU Gocap',
                 'slug' => 'nu-gocap-app',
                 'short_description' => 'Aplikasi operasional harian: kas, stok, dan laporan dalam satu genggaman.',
-                'description' => 'Masalah: pencatatan manual tersebar di buku dan chat. Solusi: aplikasi operasional terpadu. Fitur utama: kas masuk-keluar, stok barang, laporan harian. Status: BETA — dipakai harian sambil disempurnakan.',
+                'description' => 'Masalah: pencatatan manual tersebar di buku dan chat. Solusi: aplikasi operasional terpadu. Fitur utama: kas masuk-keluar, stok barang, laporan harian. Kini dipakai harian dan terus disempurnakan.',
                 'status' => 'PUBLISHED',
                 'published_at' => now(),
             ],
