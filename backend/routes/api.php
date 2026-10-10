@@ -41,3 +41,4 @@ Route::post('inquiry', [InquiryController::class, 'store']);
 
 /* Company Settings */
 Route::get('company-settings', [CompanySettingController::class, 'show']);
+

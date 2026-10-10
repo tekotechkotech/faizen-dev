@@ -29,10 +29,11 @@ class DatabaseSeeder extends Seeder
             CompanySettingSeeder::class,
         ]);
 
+        $adminEmail = env("ADMIN_EMAIL", "admin@faizenstudio.com");
         $adminPassword = env("ADMIN_PASSWORD", "admin123");
         User::factory()->create([
             "name" => "Admin",
-            "email" => "admin@faizenstudio.com",
+            "email" => $adminEmail,
             "role" => "ADMIN",
             "password" => bcrypt($adminPassword),
         ]);
