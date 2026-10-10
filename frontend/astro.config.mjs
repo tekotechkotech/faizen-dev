@@ -7,5 +7,6 @@ export default defineConfig({
   output: 'static',
   adapter: node({ mode: 'standalone' }),
   integrations: [svelte()],
-  server: { port: 3010 },
+  server: { port: 3010, host: true },
+  vite: { server: { allowedHosts: ['dev.faizen.biz.id', '.faizen.biz.id', 'localhost'] } },
 });
