@@ -13,19 +13,35 @@ const photos = [
   { id: 'photo-1522071820081-009f0129c71c', alt: 'Tim berkolaborasi mengelilingi meja' },
 ];
 const u = (id: string, w: number) => `https://images.unsplash.com/${id}?q=80&w=${w}&auto=format&fit=crop`;
+const heroSlides = heros.map((h, i) => ({
+  type: h.type,
+  title: h.title_override ?? (h.type === 'CUSTOM' ? 'Mari bangun bersama' : 'Karya Faizen'),
+  desc: h.description_override ?? '',
+  href: h.type === 'BUILD' ? '/build' : h.type === 'SOLUTION' ? '/solutions' : '/lets-build-together',
+  img: u(photos[(i + 1) % photos.length].id, 800),
+  alt: photos[(i + 1) % photos.length].alt,
+}));
 const featured = [...builds.slice(0, 3).map((b) => ({ kind: 'BUILD', title: b.title, desc: b.short_description, href: `/build/${b.slug}` })),
   ...solutions.slice(0, 3).map((s) => ({ kind: 'SOLUTION', title: s.name, desc: s.short_description, href: `/solutions/${s.slug}` }))];
 ---
 <Base title="Faizen Studio — Digital Solutions" path="/">
   <div class="marquee">
-    <div class="wrap">
-      <p class="kicker">Faizen Studio · Digital Solutions</p>
-      <h1>Kami membangun perangkat lunak yang <span class="accent">langsung bisa dipakai.</span></h1>
-      <p class="lede">Bukan slide deck. Lihat yang sudah jadi — atau bawa masalahmu dan kita bangun solusinya bersama.</p>
-      <div class="paths">
-        <a class="path" href="/solutions"><span class="path-num">01</span><span class="path-title">Pakai solusi yang sudah ada</span><span class="path-arrow">→</span></a>
-        <a class="path" href="/lets-build-together"><span class="path-num">02</span><span class="path-title">Bangun baru bersama kami</span><span class="path-arrow">→</span></a>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Faizen Studio · Digital Solutions</p>
+        <h1>Kami membangun perangkat lunak yang <span class="accent">langsung bisa dipakai.</span></h1>
+        <p class="lede">Bukan slide deck. Lihat yang sudah jadi — atau bawa masalahmu dan kita bangun solusinya bersama.</p>
+        <p><a class="cta" data-track="get_started" href="/lets-build-together">Let’s build together →</a></p>
+        <div class="paths">
+          <a class="path" href="/solutions"><span class="path-num">01</span><span class="path-title">Pakai solusi yang sudah ada</span><span class="path-arrow">→</span></a>
+          <a class="path" href="/lets-build-together"><span class="path-num">02</span><span class="path-title">Bangun baru bersama kami</span><span class="path-arrow">→</span></a>
+        </div>
       </div>
+      <div>
+        <HeroCarousel slides={heroSlides} client:load />
+      </div>
+    </div>
+  </div>
     </div>
   </div>
 
@@ -38,13 +54,6 @@ const featured = [...builds.slice(0, 3).map((b) => ({ kind: 'BUILD', title: b.ti
 
   <div class="wrap prooffig">
     <img src={u('photo-1522071820081-009f0129c71c', 1600)} width="1600" height="900" alt="Tim Faizen berkolaborasi" loading="lazy" decoding="async" />
-  </div>
-
-  <div class="spot">
-    <div class="wrap" style="padding-top:2.5rem;padding-bottom:2.5rem">
-      <p class="kicker">Sorotan</p>
-      <HeroCarousel slides={heros} client:load />
-    </div>
   </div>
 
   <section class="block">
