@@ -13,8 +13,8 @@ class CompanySettingSeeder extends Seeder
             [],
             [
                 "company_name" => "Faizen Studio",
-                "tagline" => "Building digital dreams together",
-                "description" => "We craft custom software solutions for startups and enterprises.",
+                "tagline" => "Digital Solutions — Let’s build together.",
+                "description" => "Faizen Studio membangun solusi digital yang bisa langsung dipakai, dan bermitra denganmu membangun yang baru.",
                 "logo" => null,
                 "favicon" => null,
                 "email" => "info@faizenstudio.com",

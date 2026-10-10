@@ -1,4 +1,5 @@
 <script>
+  import { track } from '../lib/analytics';
   let name = $state('');
   let contact = $state('');
   let intent = $state('CUSTOM');
@@ -20,6 +21,7 @@
       });
       if (!res.ok) throw new Error('failed');
       status = 'sent';
+      track('contact_submit', { intent });
     } catch {
       status = 'error';
       error = 'Gagal mengirim. Periksa kembali isian Anda.';

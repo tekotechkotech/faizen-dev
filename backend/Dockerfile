@@ -12,4 +12,4 @@ COPY . .
 RUN composer install --no-interaction --prefer-dist --no-dev -o || composer install --no-interaction --prefer-dist -o
 
 EXPOSE 8010
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8010"]
+CMD ["php", "-d", "expose_php=0", "artisan", "serve", "--host=0.0.0.0", "--port=8010"]

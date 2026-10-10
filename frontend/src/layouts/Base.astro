@@ -1,6 +1,7 @@
 ---
 import { api } from '../lib/api';
-const { title = 'Faizen Studio — Digital Solutions' } = Astro.props;
+const { title = 'Faizen Studio — Digital Solutions', description = 'Faizen Studio — Digital Solutions. Temukan solusi yang sudah ada, atau bangun solusi baru bersama kami.', path = '/' } = Astro.props;
+const canonical = `https://dev.faizen.biz.id${path}`;
 const company = await api.company();
 const brand = company?.company_name ?? 'Faizen Studio';
 const email = company?.email ?? 'info@faizenstudio.com';
@@ -12,7 +13,15 @@ const wa = company?.phone_whatsapp ?? '';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <meta name="description" content="Faizen Studio — Digital Solutions. Temukan solusi yang sudah ada, atau bangun solusi baru bersama kami." />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <style>
       :root { color-scheme: light; }
       body { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; margin: 0; color: #18181b; background: #fff; line-height: 1.6; }
@@ -36,21 +45,32 @@ const wa = company?.phone_whatsapp ?? '';
       form input, form select, form textarea { width: 100%; max-width: 28rem; padding: .5rem; border: 1px solid #d4d4d8; border-radius: .375rem; }
       .error { color: #b91c1c; }
       .empty { border: 1px dashed #d4d4d8; border-radius: .5rem; padding: 1.5rem; color: #52525b; }
+      .skip { position: absolute; left: -999px; top: 0; background: #059669; color: #fff; padding: .5rem 1rem; z-index: 100; }
+      .skip:focus { left: 0; }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
     </style>
   </head>
   <body>
+    <a class="skip" href="#main">Lewati ke konten</a>
     <header>
       <nav aria-label="Utama">
         <span class="brand">BUILD · SOLUTIONS · WITH US</span>
         <a href="/build">Build</a>
         <a href="/solutions">Solutions</a>
         <a href="/with-us">With Us</a>
-        <a class="cta" href="/lets-build-together">Let’s build together →</a>
+        <a class="cta" data-track="click_cta" href="/lets-build-together">Let’s build together →</a>
       </nav>
     </header>
-    <main>
+    <main id="main">
       <slot />
     </main>
+    <script>
+      import { track } from '../lib/analytics';
+      document.addEventListener('click', (e) => {
+        const t = (e.target as HTMLElement).closest('[data-track]') as HTMLElement | null;
+        if (t && t.dataset.track) track(t.dataset.track as any, { path: location.pathname });
+      });
+    </script>
     <footer>
       <div>
         <nav aria-label="Footer">
