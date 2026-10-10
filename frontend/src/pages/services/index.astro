@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { api } from '../../lib/api';
+const services = await api.services();
+---
+<Base title="Services — Faizen Studio">
+  <p class="kicker">SERVICES · Yang bisa kita bangun bersama</p>
+  <h1>Services</h1>
+  {services.length === 0 ? (
+    <div class="empty"><p>Belum ada layanan. <a href="/lets-build-together">Diskusi kebutuhan →</a></p></div>
+  ) : (
+    <div class="cards">
+      {services.map((s) => (
+        <article class="card">
+          <span class="tag">SERVICE</span>
+          <h3><a href={`/services/${s.slug}`}>{s.title}</a></h3>
+          <p>{s.short_description}</p>
+        </article>
+      ))}
+    </div>
+  )}
+</Base>

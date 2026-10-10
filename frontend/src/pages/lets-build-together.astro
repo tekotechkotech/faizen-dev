@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+import Base from '../layouts/Base.astro';
+import InquiryForm from '../components/InquiryForm.svelte';
+---
+<Base title="Let’s Build Together — Faizen Studio">
+  <p class="kicker">Satu tujuan, banyak jalan</p>
+  <h1>Let’s build together.</h1>
+  <p>Ceritakan kebutuhan Anda: solusi yang sudah ada, custom baru, atau kemitraan.</p>
+  <InquiryForm client:load />
+  <noscript><p>Aktifkan JavaScript untuk mengirim formulir, atau hubungi kami via email di footer.</p></noscript>
+</Base>

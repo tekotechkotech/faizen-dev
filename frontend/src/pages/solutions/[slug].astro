@@ -1,0 +1,22 @@
+export const prerender = false;
+---
+import Base from '../../layouts/Base.astro';
+import { api } from '../../lib/api';
+const { slug } = Astro.params;
+const solution = slug ? await api.solution(slug) : null;
+---
+<Base title={solution ? `${solution.name} — Faizen Studio` : 'Solusi tidak ditemukan'}>
+  <p class="kicker">SOLUTION / FAIZEN PRODUCT</p>
+  {!solution ? (
+    <div class="empty"><h1>Solusi tidak ditemukan</h1><p><a href="/solutions">← Kembali</a></p></div>
+  ) : (
+    <article>
+      <h1>{solution.name}</h1>
+      <p><em>A product by Faizen</em></p>
+      <p>{solution.short_description}</p>
+      <p>{solution.description}</p>
+      {solution.pricing && <p>Harga: {solution.pricing}</p>}
+      <p><a class="cta" href="/lets-build-together">Get Started →</a></p>
+    </article>
+  )}
+</Base>

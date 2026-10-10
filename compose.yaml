@@ -48,7 +48,9 @@ services:
     depends_on:
       - backend
     environment:
-      PUBLIC_API_URL: http://localhost:8010/api
+      # Inside compose network the API is reachable via service name;
+      # host-side builds fall back to http://localhost:8010/api (see api.ts).
+      PUBLIC_API_URL: http://backend:8010/api
     ports:
       - "3010:3010"
     volumes:

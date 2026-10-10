@@ -1,0 +1,21 @@
+---
+export const prerender = false;
+import Base from '../../layouts/Base.astro';
+import { api } from '../../lib/api';
+const { slug } = Astro.params;
+const build = slug ? await api.build(slug) : null;
+---
+<Base title={build ? `${build.title} — Faizen Studio` : 'Build tidak ditemukan'}>
+  <p class="kicker">BUILD / CLIENT PROJECT</p>
+  {!build ? (
+    <div class="empty"><h1>Build tidak ditemukan</h1><p><a href="/build">← Kembali ke Build</a></p></div>
+  ) : (
+    <article>
+      <h1>{build.title}</h1>
+      <p>{build.short_description}</p>
+      {build.cover && <img src={build.cover} alt={build.title} loading="lazy" width="800" height="450" />}
+      <p>{build.description}</p>
+      <p><a class="cta" href="/lets-build-together">Let’s build together →</a></p>
+    </article>
+  )}
+</Base>

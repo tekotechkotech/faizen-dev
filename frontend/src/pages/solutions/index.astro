@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import { api } from '../../lib/api';
+const solutions = await api.solutions();
+---
+<Base title="Solutions — Faizen Studio">
+  <p class="kicker">SOLUTIONS · Produk yang bisa dipakai</p>
+  <h1>Solutions</h1>
+  <p>Produk Faizen yang bisa langsung digunakan.</p>
+  {solutions.length === 0 ? (
+    <div class="empty"><p>Belum ada solusi tersedia. <a href="/lets-build-together">Hubungi kami →</a></p></div>
+  ) : (
+    <div class="cards">
+      {solutions.map((s) => (
+        <article class="card">
+          <span class="tag">SOLUTION / FAIZEN PRODUCT</span>
+          <h3><a href={`/solutions/${s.slug}`}>{s.name}</a></h3>
+          <p>{s.short_description}</p>
+          {s.status && <p><span class="tag">{s.status}</span></p>}
+        </article>
+      ))}
+    </div>
+  )}
+</Base>

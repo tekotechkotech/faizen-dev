@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { api } from '../../lib/api';
+const builds = await api.builds();
+---
+<Base title="Build — Faizen Studio">
+  <p class="kicker">BUILD · Bukti karya</p>
+  <h1>Build</h1>
+  <p>Apa yang sudah Faizen bangun: proyek klien, proyek internal, dan eksperimen.</p>
+  {builds.length === 0 ? (
+    <div class="empty"><p>Belum ada build yang dipublikasikan. <a href="/lets-build-together">Mari bangun bersama →</a></p></div>
+  ) : (
+    <div class="cards">
+      {builds.map((b) => (
+        <article class="card">
+          <span class="tag">BUILD / CLIENT PROJECT</span>
+          <h3><a href={`/build/${b.slug}`}>{b.title}</a></h3>
+          <p>{b.short_description}</p>
+        </article>
+      ))}
+    </div>
+  )}
+</Base>

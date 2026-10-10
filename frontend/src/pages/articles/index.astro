@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import { api } from '../../lib/api';
+const articles = await api.articles();
+const cats = ['Technical', 'Business', 'Product', 'Insight'];
+---
+<Base title="Articles — Faizen Studio">
+  <p class="kicker">ARTICLES · Pengetahuan & penemuan</p>
+  <h1>Articles</h1>
+  <p>Kategori: {cats.join(' · ')}</p>
+  {articles.length === 0 ? (
+    <div class="empty"><p>Belum ada artikel. <a href="/solutions">Lihat solusi →</a></p></div>
+  ) : (
+    <div class="cards">
+      {articles.map((a) => (
+        <article class="card">
+          <span class="tag">{a.category}</span>
+          <h3><a href={`/articles/${a.slug}`}>{a.title}</a></h3>
+          <p>{a.excerpt}</p>
+        </article>
+      ))}
+    </div>
+  )}
+</Base>

@@ -9,8 +9,9 @@
     "preview": "astro preview --port 3010"
   },
   "dependencies": {
-    "astro": "^5.13.0",
+    "@astrojs/node": "8",
     "@astrojs/svelte": "^7.0.0",
+    "astro": "^5.13.0",
     "svelte": "^5.0.0"
   },
   "devDependencies": {

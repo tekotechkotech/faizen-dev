@@ -1,0 +1,26 @@
+export const prerender = false;
+---
+import Base from '../../layouts/Base.astro';
+import { api } from '../../lib/api';
+const { slug } = Astro.params;
+const article = slug ? await api.article(slug) : null;
+const solutions = await api.solutions();
+---
+<Base title={article ? `${article.title} — Faizen Studio` : 'Artikel tidak ditemukan'}>
+  <p class="kicker">ARTICLE · {article?.category}</p>
+  {!article ? (
+    <div class="empty"><h1>Artikel tidak ditemukan</h1><p><a href="/articles">← Kembali</a></p></div>
+  ) : (
+    <article>
+      <h1>{article.title}</h1>
+      <p>{article.excerpt}</p>
+      <p>{article.content}</p>
+      <h2>Solusi terkait</h2>
+      <div class="cards">
+        {solutions.slice(0, 2).map((s) => (
+          <div class="card"><h3><a href={`/solutions/${s.slug}`}>{s.name}</a></h3><p><a href="/lets-build-together">Get Started →</a></p></div>
+        ))}
+      </div>
+    </article>
+  )}
+</Base>

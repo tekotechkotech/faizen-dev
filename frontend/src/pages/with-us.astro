@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { api } from '../lib/api';
+const company = await api.company();
+---
+<Base title="With Us — Faizen Studio">
+  <p class="kicker">WITH US · Siapa kami & cara kerja sama</p>
+  <h1>With Us</h1>
+  <h2>Siapa kami</h2>
+  <p>{company?.description ?? 'Faizen Studio — Digital Solutions. Let’s build together.'}</p>
+  <h2>Apa yang kami yakini</h2>
+  <p>Kemitraan jangka panjang, bukan transaksi sekali jalan. Produk dulu, perusahaan kemudian.</p>
+  <h2>Bagaimana kita bekerja sama</h2>
+  <p>Temukan solusi yang sudah ada, atau bawa masalah/idemu dan bangun solusi baru bersama kami.</p>
+  <h2>Kemitraan</h2>
+  <p>Kami terbuka untuk developer, agensi, perusahaan, dan kolaborator strategis. <a href="/lets-build-together">Mulai percakapan →</a></p>
+  <p><a class="cta" href="/lets-build-together">Let’s build together →</a></p>
+</Base>

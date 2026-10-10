@@ -1,8 +1,11 @@
 import { defineConfig } from 'astro/config';
 import svelte from '@astrojs/svelte';
+import node from '@astrojs/node';
 
 export default defineConfig({
-  // Astro 5: 'hybrid' removed — 'static' default supports per-page `prerender = false` for SSR later.
+  // Static-first with per-page SSR (`prerender = false`) served by Node adapter.
+  output: 'static',
+  adapter: node({ mode: 'standalone' }),
   integrations: [svelte()],
   server: { port: 3010 },
 });
