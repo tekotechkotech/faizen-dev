@@ -10,7 +10,7 @@ const builds = await api.builds();
   {builds.length === 0 ? (
     <div class="empty"><p>Belum ada build yang dipublikasikan. <a href="/lets-build-together">Mari bangun bersama →</a></p></div>
   ) : (
-    <div class="cards">
+    <div class="cards swipe">
       {builds.map((b) => (
         <article class="card">
           <span class="tag">BUILD / CLIENT PROJECT</span>

@@ -15,7 +15,7 @@ const u = (id: string) => `https://images.unsplash.com/${id}?q=80&w=800&auto=for
   {solutions.length === 0 ? (
     <div class="empty"><p>Belum ada solusi tersedia. <a href="/lets-build-together">Hubungi kami →</a></p></div>
   ) : (
-    <div class="cards">
+    <div class="cards swipe">
       {solutions.map((s, i) => (
         <article class="card">
           <img class="cardthumb" src={u(thumbs[i % thumbs.length].id)} width="800" height="500" alt={thumbs[i % thumbs.length].alt} loading="lazy" decoding="async" />
