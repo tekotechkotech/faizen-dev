@@ -1,9 +1,9 @@
 ---
-import '@fontsource/space-grotesk/500.css';
-import '@fontsource/space-grotesk/700.css';
-import '@fontsource/plus-jakarta-sans/400.css';
-import '@fontsource/plus-jakarta-sans/500.css';
-import '@fontsource/plus-jakarta-sans/600.css';
+import '@fontsource/space-grotesk/latin-500.css';
+import '@fontsource/space-grotesk/latin-700.css';
+import '@fontsource/plus-jakarta-sans/latin-400.css';
+import '@fontsource/plus-jakarta-sans/latin-500.css';
+import '@fontsource/plus-jakarta-sans/latin-600.css';
 import { api } from '../lib/api';
 const { title = 'Faizen Studio — Digital Solutions', description = 'Faizen Studio — Digital Solutions. Temukan solusi yang sudah ada, atau bangun solusi baru bersama kami.', path = '/' } = Astro.props;
 const canonical = `https://dev.faizen.biz.id${path}`;
@@ -20,6 +20,7 @@ const wa = company?.phone_whatsapp ?? '';
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
