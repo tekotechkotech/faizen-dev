@@ -27,6 +27,9 @@ const wa = company?.phone_whatsapp ?? '';
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <script is:inline>
+      try { document.documentElement.dataset.theme = localStorage.getItem('faizen-theme') || 'light'; } catch {}
+    </script>
     <style>
       /* Hallmark · macrostructure: Marquee Hero · nav: statement-bar · footer: index · genre: editorial
        * pre-emit critique: P5 H5 E4 S5 R5 V4 */
@@ -42,6 +45,16 @@ const wa = company?.phone_whatsapp ?? '';
         --font-display: 'Space Grotesk', system-ui, sans-serif;
         --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
         --font-mono: ui-monospace, 'Roboto Mono', monospace;
+      }
+      [data-theme="dark"] {
+        --color-paper: #09090b;
+        --color-paper-2: #131316;
+        --color-ink: #fafafa;
+        --color-muted: #a1a1aa;
+        --color-line: #27272a;
+        --color-accent: #34d399;
+        --color-accent-bg: #059669;
+        --color-accent-ink: #022c22;
       }
       html, body { overflow-x: clip; }
       body { font-family: var(--font-body); margin: 0; color: var(--color-ink); background: var(--color-paper); line-height: 1.6; font-size: 1rem; }
@@ -109,7 +122,10 @@ const wa = company?.phone_whatsapp ?? '';
       footer a:hover { color: var(--color-accent); }
       footer .fine { border-top: 1px solid var(--color-line); padding: 1rem 0 2rem; color: var(--color-muted); font-size: .85rem; display: flex; gap: 1rem; flex-wrap: wrap; }
       form label { display: block; margin: .9rem 0 .3rem; font-weight: 600; }
-      form input, form select, form textarea { width: 100%; max-width: 30rem; padding: .6rem; border: 1px solid var(--color-ink); border-radius: 2px; background: #fff; font: inherit; }
+      form input, form select, form textarea { width: 100%; max-width: 30rem; padding: .6rem; border: 1px solid var(--color-ink); border-radius: 2px; background: var(--color-paper); color: var(--color-ink); font: inherit; }
+      img { max-width: 100%; height: auto; }
+      .rowthumb, .cardthumb, .prooffig img { border: 1px solid var(--color-line); border-radius: 2px; display: block; }
+      .themebtn { font: inherit; background: none; border: 1px solid var(--color-ink); border-radius: 2px; padding: .35rem .7rem; cursor: pointer; color: var(--color-ink); }
       .error { color: #b91c1c; }
       .empty { border: 1px dashed var(--color-muted); padding: 1.5rem; color: var(--color-muted); }
       .kicker { font-family: var(--font-mono); letter-spacing: .12em; font-size: .75rem; color: var(--color-muted); text-transform: uppercase; }
@@ -133,6 +149,7 @@ const wa = company?.phone_whatsapp ?? '';
           <a href="/build">Build</a>
           <a href="/solutions">Solutions</a>
           <a href="/with-us">With Us</a>
+          <button class="themebtn" id="themebtn" type="button" aria-label="Ganti mode gelap terang">🌙</button>
           <a class="cta" data-track="click_cta" href="/lets-build-together" style="padding:.45rem 1rem;font-size:.9rem">Let’s build together →</a>
         </nav>
       </div>
@@ -145,6 +162,15 @@ const wa = company?.phone_whatsapp ?? '';
       document.addEventListener('click', (e) => {
         const t = (e.target as HTMLElement).closest('[data-track]') as HTMLElement | null;
         if (t && t.dataset.track) track(t.dataset.track as any, { path: location.pathname });
+      });
+      const btn = document.getElementById('themebtn');
+      const paint = () => { if (btn) btn.textContent = document.documentElement.dataset.theme === 'dark' ? '🌞' : '🌙'; };
+      paint();
+      btn?.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        try { localStorage.setItem('faizen-theme', next); } catch {}
+        paint();
       });
     </script>
     <footer>

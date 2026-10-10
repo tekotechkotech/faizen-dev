@@ -5,6 +5,14 @@ import { api } from '../lib/api';
 const [heros, builds, solutions, services, articles] = await Promise.all([
   api.heros(), api.builds(), api.solutions(), api.services(), api.articles(),
 ]);
+const photos = [
+  { id: 'photo-1498050108023-c5249f4df085', alt: 'Kode di layar laptop' },
+  { id: 'photo-1460925895917-afdab827c52f', alt: 'Dasbor analitik di laptop' },
+  { id: 'photo-1461749280684-dccba630e2f6', alt: 'Layar kode dalam ruang gelap' },
+  { id: 'photo-1551434678-e076c223a692', alt: 'Developer bekerja bersama' },
+  { id: 'photo-1522071820081-009f0129c71c', alt: 'Tim berkolaborasi mengelilingi meja' },
+];
+const u = (id: string, w: number) => `https://images.unsplash.com/${id}?q=80&w=${w}&auto=format&fit=crop`;
 const featured = [...builds.slice(0, 3).map((b) => ({ kind: 'BUILD', title: b.title, desc: b.short_description, href: `/build/${b.slug}` })),
   ...solutions.slice(0, 3).map((s) => ({ kind: 'SOLUTION', title: s.name, desc: s.short_description, href: `/solutions/${s.slug}` }))];
 ---
@@ -28,6 +36,10 @@ const featured = [...builds.slice(0, 3).map((b) => ({ kind: 'BUILD', title: b.ti
     <div><strong>{articles.length}</strong><span>ARTIKEL</span></div>
   </div>
 
+  <div class="wrap prooffig">
+    <img src={u('photo-1522071820081-009f0129c71c', 1600)} width="1600" height="900" alt="Tim Faizen berkolaborasi" loading="lazy" decoding="async" />
+  </div>
+
   <div class="spot">
     <div class="wrap" style="padding-top:2.5rem;padding-bottom:2.5rem">
       <p class="kicker">Sorotan</p>
@@ -40,7 +52,7 @@ const featured = [...builds.slice(0, 3).map((b) => ({ kind: 'BUILD', title: b.ti
       <div class="sec-head"><h2>What We Build</h2><a href="/build">Semua build →</a></div>
       <div class="rows">
         {featured.map((f, i) => (
-          <div class="row"><span class="idx">{String(i + 1).padStart(2, '0')}</span><div><span class="tag">{f.kind}</span><h3><a href={f.href}>{f.title}</a></h3><p>{f.desc}</p></div></div>
+          <div class="row"><span class="idx">{String(i + 1).padStart(2, '0')}</span><div><img class="rowthumb" src={u(photos[i % photos.length].id, 640)} width="640" height="400" alt={photos[i % photos.length].alt} loading="lazy" decoding="async" /><span class="tag">{f.kind}</span><h3><a href={f.href}>{f.title}</a></h3><p>{f.desc}</p></div></div>
         ))}
       </div>
     </div>

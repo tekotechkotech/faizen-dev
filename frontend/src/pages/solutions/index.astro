@@ -2,6 +2,11 @@
 import Base from '../../layouts/Base.astro';
 import { api } from '../../lib/api';
 const solutions = await api.solutions();
+const thumbs = [
+  { id: 'photo-1551434678-e076c223a692', alt: 'Developer membangun produk' },
+  { id: 'photo-1460925895917-afdab827c52f', alt: 'Dasbor produk di laptop' },
+];
+const u = (id: string) => `https://images.unsplash.com/${id}?q=80&w=800&auto=format&fit=crop`;
 ---
 <Base title="Solutions — Faizen Studio">
   <p class="kicker">SOLUTIONS · Produk yang bisa dipakai</p>
@@ -11,8 +16,9 @@ const solutions = await api.solutions();
     <div class="empty"><p>Belum ada solusi tersedia. <a href="/lets-build-together">Hubungi kami →</a></p></div>
   ) : (
     <div class="cards">
-      {solutions.map((s) => (
+      {solutions.map((s, i) => (
         <article class="card">
+          <img class="cardthumb" src={u(thumbs[i % thumbs.length].id)} width="800" height="500" alt={thumbs[i % thumbs.length].alt} loading="lazy" decoding="async" />
           <span class="tag">SOLUTION / FAIZEN PRODUCT</span>
           <h3><a href={`/solutions/${s.slug}`}>{s.name}</a></h3>
           <p>{s.short_description}</p>
