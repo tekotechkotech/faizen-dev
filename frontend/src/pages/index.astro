@@ -32,10 +32,7 @@ const featured = [...builds.slice(0, 3).map((b) => ({ kind: 'BUILD', title: b.ti
         <h1>Kami membangun <span class="accent">website dan aplikasi</span> yang bisnis Anda butuhkan.</h1>
         <p class="lede">Dari company profile sampai sistem operasional — dikerjakan langsung oleh engineer, transparan sejak hari pertama.</p>
         <p><a class="cta" data-track="get_started" href="/lets-build-together">Let’s build together →</a></p>
-        <div class="paths">
-          <a class="path" href="/solutions"><span class="path-num">01</span><span class="path-title">Pakai solusi yang sudah ada</span><span class="path-arrow">→</span></a>
-          <a class="path" href="/lets-build-together"><span class="path-num">02</span><span class="path-title">Bangun baru bersama kami</span><span class="path-arrow">→</span></a>
-        </div>
+        <p class="triostrip"><span>01 Discuss</span><span aria-hidden="true">→</span><span>02 Plan</span><span aria-hidden="true">→</span><span>03 Build</span></p>
       </div>
       <div>
         <HeroCarousel slides={heroSlides} client:load />
@@ -63,17 +60,6 @@ const featured = [...builds.slice(0, 3).map((b) => ({ kind: 'BUILD', title: b.ti
         {featured.map((f, i) => (
           <div class="row"><span class="idx">{String(i + 1).padStart(2, '0')}</span><div><img class="rowthumb" src={u(photos[i % photos.length].id, 640)} width="640" height="400" alt={photos[i % photos.length].alt} loading="lazy" decoding="async" /><span class="tag">{f.kind}</span><h3><a href={f.href}>{f.title}</a></h3><p>{f.desc}</p></div></div>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="sec-head"><h2>Cara kerja</h2><a href="/with-us">Tentang kami →</a></div>
-      <div class="rows">
-        <div class="row"><span class="idx">01</span><div><span class="tag">WE DISCUSS</span><h3>Diskusi dulu, gratis</h3><p>Ceritakan kebutuhanmu. Kami dengarkan, lalu kasih rekomendasi jujur — termasuk kalau solusinya bukan kami.</p></div></div>
-        <div class="row"><span class="idx">02</span><div><span class="tag">WE PLAN</span><h3>Rancang yang jelas</h3><p>Kebutuhan dipetakan jadi rencana: fitur, tahapan, dan biaya transparan sejak awal.</p></div></div>
-        <div class="row"><span class="idx">03</span><div><span class="tag">WE BUILD</span><h3>Bangun transparan</h3><p>Dikerjakan langsung oleh engineer. Kamu tahu progresnya tiap tahap, bukan kabar angin.</p></div></div>
       </div>
     </div>
   </section>
