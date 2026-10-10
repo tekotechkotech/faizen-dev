@@ -68,13 +68,13 @@ const wa = company?.phone_whatsapp ?? '';
       .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
       /* Nav: statement bar */
       .topbar { border-bottom: 1px solid var(--color-ink); background: var(--color-paper); }
-      .topbar .wrap { display: flex; gap: 1.25rem; align-items: baseline; flex-wrap: wrap; padding-top: .9rem; padding-bottom: .9rem; }
+      .topbar .wrap { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; padding-top: .9rem; padding-bottom: .9rem; }
       .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: .02em; }
-      .navphrase { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em; color: var(--color-muted); }
-      .topbar nav { display: flex; gap: 1.1rem; margin-left: auto; align-items: center; flex-wrap: wrap; }
-      .topbar nav a { color: var(--color-ink); text-decoration: none; font-weight: 500; font-size: .95rem; }
-      .topbar nav a:hover { color: var(--color-accent); }
-      .topbar nav a.cta, .topbar nav a.cta:hover { color: var(--color-paper); }
+      .centermenu { display: flex; gap: .9rem; align-items: center; flex-wrap: wrap; }
+      .centermenu a { font-family: var(--font-mono); font-size: .8rem; letter-spacing: .12em; color: var(--color-ink); text-decoration: none; font-weight: 500; }
+      .centermenu a:hover { color: var(--color-accent); }
+      .centermenu .dot { color: var(--color-muted); }
+      .navright { margin-left: auto; display: flex; align-items: center; }
       a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
       /* Marquee hero */
       .marquee { border-bottom: 1px solid var(--color-ink); padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 3.5rem); }
@@ -146,6 +146,9 @@ const wa = company?.phone_whatsapp ?? '';
       .skip:focus { left: 0; }
       @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
       @media (min-width: 48rem) {
+        .topbar .wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+        .centermenu { justify-content: center; }
+        .navright { margin-left: 0; justify-self: end; }
         .hero-grid { grid-template-columns: 1.05fr .95fr; gap: 3rem; }
         .paths { grid-template-columns: 1fr 1fr; }
         .path + .path { border-left: 1px solid var(--color-line); padding-left: 2rem; }
@@ -158,14 +161,12 @@ const wa = company?.phone_whatsapp ?? '';
     <header class="topbar">
       <div class="wrap">
         <span class="wordmark">FAIZEN</span>
-        <span class="navphrase">BUILD · SOLUTIONS · WITH US</span>
-        <nav aria-label="Utama">
-          <a href="/build">Build</a>
-          <a href="/solutions">Solutions</a>
-          <a href="/with-us">With Us</a>
-          <button class="themebtn" id="themebtn" type="button" aria-label="Ganti mode gelap terang">🌙</button>
-          <a class="cta" data-track="click_cta" href="/lets-build-together" style="padding:.45rem 1rem;font-size:.9rem">Let’s build together →</a>
+        <nav class="centermenu" aria-label="Utama">
+          <a href="/build">BUILD</a><span class="dot" aria-hidden="true">·</span><a href="/solutions">SOLUTIONS</a><span class="dot" aria-hidden="true">·</span><a href="/with-us">WITH US</a>
         </nav>
+        <div class="navright">
+          <button class="themebtn" id="themebtn" type="button" aria-label="Ganti mode gelap terang">🌙</button>
+        </div>
       </div>
     </header>
     <main id="main">
