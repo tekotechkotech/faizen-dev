@@ -55,8 +55,8 @@ const featured = [...builds.slice(0, 3).map((b) => ({ kind: 'BUILD', title: b.ti
 
   <section class="block">
     <div class="wrap">
-      <div class="sec-head"><h2>What We Build</h2><a href="/build">Semua build →</a></div>
-      <div class="rows swipe">
+      <div class="sec-head carhead"><h2>What We Build</h2><span class="carbtns"><button class="carbtn" type="button" data-carbtn="car-wb" data-dir="prev" aria-label="Geser kiri">←</button><button class="carbtn" type="button" data-carbtn="car-wb" data-dir="next" aria-label="Geser kanan">→</button></span><a href="/build">Semua build →</a></div>
+      <div class="rows swipe" id="car-wb" tabindex="0" role="region" aria-label="Daftar karya, geser untuk melihat">
         {featured.map((f, i) => (
           <div class="row"><span class="idx">{String(i + 1).padStart(2, '0')}</span><div><img class="rowthumb" src={u(photos[i % photos.length].id, 640)} width="640" height="400" alt={photos[i % photos.length].alt} loading="lazy" decoding="async" /><span class="tag">{f.kind}</span><h3><a href={f.href}>{f.title}</a></h3><p>{f.desc}</p></div></div>
         ))}

@@ -15,7 +15,9 @@ const u = (id: string) => `https://images.unsplash.com/${id}?q=80&w=800&auto=for
   {solutions.length === 0 ? (
     <div class="empty"><p>Belum ada solusi tersedia. <a href="/lets-build-together">Hubungi kami →</a></p></div>
   ) : (
-    <div class="cards swipe">
+    <>
+    <p class="carhead"><span></span><span class="carbtns"><button class="carbtn" type="button" data-carbtn="car-solutions" data-dir="prev" aria-label="Geser kiri">←</button><button class="carbtn" type="button" data-carbtn="car-solutions" data-dir="next" aria-label="Geser kanan">→</button></span></p>
+    <div class="cards swipe" id="car-solutions" tabindex="0" role="region" aria-label="Daftar solusi, geser untuk melihat">
       {solutions.map((s, i) => (
         <article class="card">
           <img class="cardthumb" src={u(thumbs[i % thumbs.length].id)} width="800" height="500" alt={thumbs[i % thumbs.length].alt} loading="lazy" decoding="async" />
@@ -26,5 +28,6 @@ const u = (id: string) => `https://images.unsplash.com/${id}?q=80&w=800&auto=for
         </article>
       ))}
     </div>
+    </>
   )}
 </Base>

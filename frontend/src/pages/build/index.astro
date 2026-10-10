@@ -10,7 +10,9 @@ const builds = await api.builds();
   {builds.length === 0 ? (
     <div class="empty"><p>Belum ada build yang dipublikasikan. <a href="/lets-build-together">Mari bangun bersama →</a></p></div>
   ) : (
-    <div class="cards swipe">
+    <>
+    <p class="carhead"><span></span><span class="carbtns"><button class="carbtn" type="button" data-carbtn="car-build" data-dir="prev" aria-label="Geser kiri">←</button><button class="carbtn" type="button" data-carbtn="car-build" data-dir="next" aria-label="Geser kanan">→</button></span></p>
+    <div class="cards swipe" id="car-build" tabindex="0" role="region" aria-label="Daftar build, geser untuk melihat">
       {builds.map((b) => (
         <article class="card">
           <span class="tag">BUILD / CLIENT PROJECT</span>
@@ -19,5 +21,6 @@ const builds = await api.builds();
         </article>
       ))}
     </div>
+    </>
   )}
 </Base>

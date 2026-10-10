@@ -9,7 +9,9 @@ const services = await api.services();
   {services.length === 0 ? (
     <div class="empty"><p>Belum ada layanan. <a href="/lets-build-together">Diskusi kebutuhan →</a></p></div>
   ) : (
-    <div class="cards swipe">
+    <>
+    <p class="carhead"><span></span><span class="carbtns"><button class="carbtn" type="button" data-carbtn="car-services" data-dir="prev" aria-label="Geser kiri">←</button><button class="carbtn" type="button" data-carbtn="car-services" data-dir="next" aria-label="Geser kanan">→</button></span></p>
+    <div class="cards swipe" id="car-services" tabindex="0" role="region" aria-label="Daftar layanan, geser untuk melihat">
       {services.map((s) => (
         <article class="card">
           <span class="tag">SERVICE</span>
@@ -18,5 +20,6 @@ const services = await api.services();
         </article>
       ))}
     </div>
+    </>
   )}
 </Base>

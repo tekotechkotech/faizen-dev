@@ -11,7 +11,9 @@ const cats = ['Technical', 'Business', 'Product', 'Insight'];
   {articles.length === 0 ? (
     <div class="empty"><p>Belum ada artikel. <a href="/solutions">Lihat solusi →</a></p></div>
   ) : (
-    <div class="cards swipe">
+    <>
+    <p class="carhead"><span></span><span class="carbtns"><button class="carbtn" type="button" data-carbtn="car-articles" data-dir="prev" aria-label="Geser kiri">←</button><button class="carbtn" type="button" data-carbtn="car-articles" data-dir="next" aria-label="Geser kanan">→</button></span></p>
+    <div class="cards swipe" id="car-articles" tabindex="0" role="region" aria-label="Daftar artikel, geser untuk melihat">
       {articles.map((a) => (
         <article class="card">
           <span class="tag">{a.category}</span>
@@ -20,5 +22,6 @@ const cats = ['Technical', 'Business', 'Product', 'Insight'];
         </article>
       ))}
     </div>
+    </>
   )}
 </Base>
