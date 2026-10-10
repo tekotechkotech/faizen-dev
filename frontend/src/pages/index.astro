@@ -1,36 +1,56 @@
 ---
 import Base from '../layouts/Base.astro';
 import HeroCarousel from '../components/HeroCarousel.svelte';
-import InquiryForm from '../components/InquiryForm.svelte';
 import { api } from '../lib/api';
-const heros = await api.heros();
-const builds = (await api.builds()).slice(0, 3);
-const solutions = (await api.solutions()).slice(0, 3);
+const [heros, builds, solutions, services, articles] = await Promise.all([
+  api.heros(), api.builds(), api.solutions(), api.services(), api.articles(),
+]);
+const featured = [...builds.slice(0, 3).map((b) => ({ kind: 'BUILD', title: b.title, desc: b.short_description, href: `/build/${b.slug}` })),
+  ...solutions.slice(0, 3).map((s) => ({ kind: 'SOLUTION', title: s.name, desc: s.short_description, href: `/solutions/${s.slug}` }))];
 ---
-<Base title="Faizen Studio — Digital Solutions">
-  <section>
-    <p class="kicker">BUILD · SOLUTIONS · WITH US</p>
-    <h1>Kami membangun solusi digital yang bisa langsung dipakai.</h1>
-    <p>Jelajahi produk Faizen atau bangun solusi baru bersama kami.</p>
-    <p><a class="cta" href="/lets-build-together">Let’s build together →</a></p>
-    <HeroCarousel slides={heros} client:load />
-  </section>
+<Base title="Faizen Studio — Digital Solutions" path="/">
+  <div class="marquee">
+    <div class="wrap">
+      <p class="kicker">Faizen Studio · Digital Solutions</p>
+      <h1>Kami membangun perangkat lunak yang <span class="accent">langsung bisa dipakai.</span></h1>
+      <p class="lede">Bukan slide deck. Lihat yang sudah jadi — atau bawa masalahmu dan kita bangun solusinya bersama.</p>
+      <div class="paths">
+        <a class="path" href="/solutions"><span class="path-num">01</span><span class="path-title">Pakai solusi yang sudah ada</span><span class="path-arrow">→</span></a>
+        <a class="path" href="/lets-build-together"><span class="path-num">02</span><span class="path-title">Bangun baru bersama kami</span><span class="path-arrow">→</span></a>
+      </div>
+    </div>
+  </div>
 
-  <section>
-    <h2>What We Build</h2>
-    <div class="cards">
-      {builds.map((b) => (
-        <article class="card"><span class="tag">BUILD / CLIENT PROJECT</span><h3><a href={`/build/${b.slug}`}>{b.title}</a></h3><p>{b.short_description}</p></article>
-      ))}
-      {solutions.map((s) => (
-        <article class="card"><span class="tag">SOLUTION / FAIZEN PRODUCT</span><h3><a href={`/solutions/${s.slug}`}>{s.name}</a></h3><p>{s.short_description}</p></article>
-      ))}
+  <div class="wrap proof" aria-label="Bukti karya">
+    <div><strong>{builds.length}</strong><span>BUILD TERBIT</span></div>
+    <div><strong>{solutions.length}</strong><span>SOLUSI</span></div>
+    <div><strong>{services.length}</strong><span>LAYANAN</span></div>
+    <div><strong>{articles.length}</strong><span>ARTIKEL</span></div>
+  </div>
+
+  <div class="spot">
+    <div class="wrap" style="padding-top:2.5rem;padding-bottom:2.5rem">
+      <p class="kicker">Sorotan</p>
+      <HeroCarousel slides={heros} client:load />
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head"><h2>What We Build</h2><a href="/build">Semua build →</a></div>
+      <div class="rows">
+        {featured.map((f, i) => (
+          <div class="row"><span class="idx">{String(i + 1).padStart(2, '0')}</span><div><span class="tag">{f.kind}</span><h3><a href={f.href}>{f.title}</a></h3><p>{f.desc}</p></div></div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Let’s build together.</h2>
-    <p>Punya masalah atau ide? Ceritakan, kita wujudkan bersama.</p>
-    <p><a class="cta" href="/lets-build-together">Mulai →</a></p>
-  </section>
+  <div class="cta-band">
+    <div class="wrap" style="padding-top:3.5rem;padding-bottom:3.5rem">
+      <h2>Let’s build together.</h2>
+      <p style="max-width:44ch">Punya masalah atau ide? Satu formulir, tiga kolom, langsung sampai ke kami.</p>
+      <p><a class="cta" data-track="get_started" href="/lets-build-together">Mulai →</a></p>
+    </div>
+  </div>
 </Base>
