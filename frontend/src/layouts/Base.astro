@@ -139,8 +139,8 @@ const wa = company?.phone_whatsapp ?? '';
       .spot-nav button { font-family: var(--font-display); background: none; border: 1px solid var(--color-ink); border-radius: var(--radius-btn); padding: .35rem .8rem; cursor: pointer; color: var(--color-ink); }
       .spot-nav button:hover { background: var(--color-ink); color: var(--color-paper); }
       /* Footer index */
-      footer { border-top: 1px solid var(--color-ink); margin-top: 0; background: var(--color-paper); }
-      footer .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 2rem 0; }
+      footer { border-top: 1px solid var(--color-ink); margin-top: clamp(2.5rem, 6vw, 4rem); background: var(--color-paper); }
+      footer .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; padding: 2.5rem 0; }
       footer ul { list-style: none; padding: 0; margin: .4rem 0; }
       footer li { margin: .3rem 0; }
       footer a { color: var(--color-ink); text-decoration: none; }
