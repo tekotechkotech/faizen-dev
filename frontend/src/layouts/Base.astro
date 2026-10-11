@@ -69,6 +69,10 @@ const wa = company?.phone_whatsapp ?? '';
       h1, h2, h3 { font-family: var(--font-display); font-style: normal; line-height: 1.08; letter-spacing: -0.01em; overflow-wrap: anywhere; min-width: 0; }
       body { font-size: 1rem; line-height: 1.65; }
       .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
+      @media (max-width: 47.99rem) {
+        .wrap { padding: 0 1.5rem; }
+        .carhead { flex-wrap: wrap; row-gap: .6rem; }
+      }
       /* Nav: statement bar */
       .topbar { border-bottom: 1px solid var(--color-ink); background: var(--color-paper); }
       .topbar .wrap { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; padding-top: .9rem; padding-bottom: .9rem; }
@@ -113,7 +117,9 @@ const wa = company?.phone_whatsapp ?? '';
       .rows.swipe .row .idx { display: block; margin-bottom: .5rem; }
       .cards.swipe { border-top: 0; }
       @media (max-width: 47.99rem) {
-        .rows.swipe, .cards.swipe { margin: 0 -1.25rem; padding-left: 1.25rem; padding-right: 1.25rem; }
+        .rows.swipe, .cards.swipe { margin: 0 -1.5rem; padding-left: 1.5rem; padding-right: 1.5rem; }
+        .proof { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 1rem; }
+        .proof div strong { font-size: 1.35rem; }
       }
       .rows .row .idx { font-family: var(--font-mono); color: var(--color-muted); font-size: .85rem; }
       .rows .row h3 { margin: 0 0 .3rem; font-size: 1.25rem; }
@@ -149,7 +155,7 @@ const wa = company?.phone_whatsapp ?? '';
       form label { display: block; margin: .9rem 0 .3rem; font-weight: 600; }
       form input, form select, form textarea { width: 100%; max-width: 30rem; padding: .6rem; border: 1px solid var(--color-ink); border-radius: var(--radius-btn); background: var(--color-paper); color: var(--color-ink); font: inherit; }
       img { max-width: 100%; height: auto; }
-      .rowthumb, .cardthumb, .prooffig img { border: 1px solid var(--color-line); border-radius: var(--radius-btn); display: block; }
+      .rowthumb, .cardthumb, .prooffig img { border: 1px solid var(--color-line); border-radius: var(--radius-btn); display: block; background: var(--color-paper-2); }
       .themebtn { font: inherit; background: none; border: 1px solid var(--color-ink); border-radius: var(--radius-btn); padding: .35rem .7rem; cursor: pointer; color: var(--color-ink); }
       .error { color: var(--color-danger); }
       .empty { border: 1px dashed var(--color-muted); padding: 1.5rem; color: var(--color-muted); }
